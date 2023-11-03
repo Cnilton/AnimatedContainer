@@ -1,77 +1,76 @@
-import React, {useState, useEffect} from 'react';
-import {ScrollView, View} from 'react-native';
+import React, {ReactNode, useEffect} from 'react';
+import {ScrollView, ScrollViewProps, ViewStyle} from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
   withTiming,
 } from 'react-native-reanimated';
+import {style} from './styles';
 
-const AnimatedContainer: React.FC = ({children}) => {
-  const [totalHeight, setTotalHeight] = useState(0);
+/**
+ * Props for the AnimatedContainer component.
+ */
+interface AnimatedContainerProps {
+  /** The content to be displayed inside the AnimatedContainer. */
+  children: ReactNode;
+  /** Style for the main container. */
+  containerStyle?: ViewStyle;
+  /** Style for the internal ScrollView container. */
+  innerScrollContainerStyle?: ViewStyle;
+  /** Style for the content inside the internal ScrollView. */
+  innerScrollContentContainerStyle?: ViewStyle;
+  /** Additional props for the main container (if needed). */
+  containerProps?: ViewStyle;
+  /** Additional props for the internal ScrollView (if needed). */
+  scrollContainerProps?: ScrollViewProps;
+  /** Duration of the height animation in milliseconds. Default animation duration is 500 milliseconds */
+  animationDuration?: number;
+}
+
+/**
+ * Animated container that adjusts its height based on the content inside a ScrollView.
+ */
+export const AnimatedContainer: React.FC<AnimatedContainerProps> = ({
+  children,
+  containerStyle,
+  innerScrollContainerStyle,
+  innerScrollContentContainerStyle,
+  containerProps,
+  scrollContainerProps,
+  animationDuration = 500, // Default animation duration is 500 milliseconds
+}) => {
   const scrollViewHeight = useSharedValue(0);
-  const containerHeight = useSharedValue(0);
 
   useEffect(() => {
-    let contentHeight = 0;
-    React.Children.forEach(children, child => {
-      if (child && child.type === Animated.Text) {
-        child.measureLayout(
-          0,
-          0,
-          (_, measuredHeight) => {
-            contentHeight += measuredHeight;
-          },
-          () => {},
-        );
-      }
-    });
+    scrollViewHeight.value = withTiming(0, {duration: animationDuration});
+  }, [children, animationDuration]);
 
-    scrollViewHeight.value = withTiming(contentHeight, {duration: 500});
-    setTotalHeight(contentHeight);
-  }, [children]);
-
-  const containerStyle = useAnimatedStyle(() => {
+  const animatedContainerStyle = useAnimatedStyle(() => {
     return {
-      height: Math.min(scrollViewHeight.value, containerHeight.value),
+      height: scrollViewHeight.value,
     };
   });
 
-  const handleContentSizeChange = (_, contentHeight: number) => {
-    scrollViewHeight.value = withTiming(contentHeight, {duration: 500});
-    setTotalHeight(contentHeight);
-  };
-
-  const handleContainerLayout = (event: any) => {
-    containerHeight.value = event.nativeEvent.layout.height;
+  const handleContentSizeChange = (_: number, contentHeight: number) => {
+    const newHeight = contentHeight;
+    scrollViewHeight.value = withTiming(newHeight, {
+      duration: animationDuration,
+    });
   };
 
   return (
-    <View style={{flex: 1}} onLayout={handleContainerLayout}>
-      <Animated.View
-        style={[
-          {
-            borderRadius: 8,
-            elevation: 4,
-            zIndex: 1,
-            backgroundColor: 'white',
-            shadowColor: '#171717',
-            shadowOffset: {width: -2, height: 4},
-            shadowOpacity: 0.6,
-            shadowRadius: 3,
-          },
-          containerStyle,
-        ]}>
-        <ScrollView
-          style={{flex: 1}}
-          contentContainerStyle={{paddingVertical: 16}}
-          onContentSizeChange={handleContentSizeChange}
-          showsVerticalScrollIndicator={false}
-          bounces={false}>
-          {children}
-        </ScrollView>
-      </Animated.View>
-    </View>
+    <Animated.View
+      style={[style.animatedViewStyle, animatedContainerStyle, containerStyle]}
+      {...containerProps}>
+      <ScrollView
+        style={innerScrollContainerStyle}
+        contentContainerStyle={innerScrollContentContainerStyle}
+        onContentSizeChange={handleContentSizeChange}
+        showsVerticalScrollIndicator={false}
+        bounces={false}
+        {...scrollContainerProps}>
+        {children}
+      </ScrollView>
+    </Animated.View>
   );
 };
-
-export default AnimatedContainer;

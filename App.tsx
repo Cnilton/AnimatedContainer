@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
-import {View, Text, Button} from 'react-native';
-import DynamicHeightComponent from './src/AnimatedContainer'; // Importe o componente criado
+import {View, Text, Button, TextInput} from 'react-native';
+import {AnimatedContainer} from './src/AnimatedContainer'; // Importe o componente criado
 
 const App = () => {
   const [texts, setTexts] = React.useState<string[]>([
@@ -16,7 +16,16 @@ const App = () => {
         backgroundColor: '#ffffff',
         alignItems: 'center',
       }}>
-      <View style={{flex: 1}}>
+      <View
+        style={{
+          height: 60,
+          width: '100%',
+          borderWidth: 1,
+          borderColor: 'gray',
+        }}>
+        <Text>animationTest</Text>
+      </View>
+      <View style={{}}>
         <Button
           title="asd"
           onPress={() => {
@@ -25,11 +34,18 @@ const App = () => {
           }}
         />
       </View>
-      <DynamicHeightComponent>
+
+      <AnimatedContainer>
         {texts.map((t, index) => (
-          <Text key={index}>{t}</Text>
+          <View key={index} style={{padding: 6}}>
+            <Text>{t}</Text>
+            <TextInput multiline numberOfLines={2} />
+          </View>
         ))}
-      </DynamicHeightComponent>
+      </AnimatedContainer>
+
+      <Text>Powered by React Native</Text>
+
       <View style={{height: 20}}></View>
     </View>
   );
