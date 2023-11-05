@@ -1,5 +1,5 @@
 {
-  "name": "animated_container",
+  "name": "react-native-reanimated-container",
   "version": "1.0.0",
   "private": false,
   "scripts": {

@@ -7,11 +7,11 @@ Pod::Spec.new do |s|
     AnimatedContainer is a React Native component that adjusts its height based on the content inside a ScrollView. It provides smooth animations using react-native-reanimated.
   DESC
 
-  s.homepage         = 'https://github.com/your-username/animated-container'
+  s.homepage         = 'https://github.com/Cnilton/animated-container'
   s.license          = 'MIT'
   s.author           = { 'Caio Nilton' => 'caioniltonlemosbarroso@gmail.com' }
   s.platforms        = { :ios => '10.0' }
-  s.source           = { :git => 'https://github.com/your-username/animated-container.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Cnilton/animated-container.git', :tag => s.version.to_s }
 
   s.source_files = 'path/to/your/source/files', '*.{js,jsx,ts,tsx}'
   s.dependency 'React', '>= 0.63'

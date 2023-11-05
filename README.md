@@ -15,9 +15,9 @@ yarn add react-native-reanimated
 Next, install the AnimatedContainer package:
 
 ```bash
-npm install animated-container
+npm install react-native-reanimated-container
 # or
-yarn add animated-container
+yarn add react-native-reanimated-container
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ Import AnimatedContainer into your React Native file and use it in your componen
 ```jsx
 import React from 'react';
 import {View, Text} from 'react-native';
-import {AnimatedContainer} from 'animated-container';
+import {AnimatedContainer} from 'react-native-reanimated-container';
 
 const App = () => {
   return (
