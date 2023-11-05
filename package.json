@@ -1,7 +1,7 @@
 {
-  "name": "animationTest",
-  "version": "0.0.1",
-  "private": true,
+  "name": "animated_container",
+  "version": "1.0.0",
+  "private": false,
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -9,12 +9,10 @@
     "start": "react-native start",
     "test": "jest"
   },
-  "dependencies": {
-    "react": "18.2.0",
-    "react-native": "0.72.6",
-    "react-native-gesture-handler": "^2.13.4",
-    "react-native-reanimated": "^3.5.4",
-    "react-native-view-shot": "^3.8.0"
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-reanimated": "*"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
