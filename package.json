@@ -1,7 +1,9 @@
 {
   "name": "react-native-reanimated-container",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
+  "author": "Caio Nilton <cnilton>",
+  "main": "index.tsx",
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
