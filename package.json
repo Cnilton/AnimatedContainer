@@ -1,6 +1,6 @@
 {
   "name": "react-native-reanimated-container",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "author": "Caio Nilton <cnilton>",
   "main": "index.tsx",
