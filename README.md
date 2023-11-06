@@ -1,5 +1,5 @@
-[![npm version](https://badge.fury.io/js/animated-container.svg)](https://www.npmjs.com/package/animated-container)
-[![Downloads](https://img.shields.io/npm/dm/animated-container)](https://www.npmjs.com/package/animated-container)
+[![npm version](https://badge.fury.io/js/animated-container.svg)](https://www.npmjs.com/package/react-native-reanimated-container)
+[![Downloads](https://img.shields.io/npm/dm/animated-container)](https://www.npmjs.com/package/react-native-reanimated-container)
 
 # Animated Container
 
