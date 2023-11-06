@@ -1,3 +1,6 @@
+[![npm version](https://badge.fury.io/js/animated-container.svg)](https://www.npmjs.com/package/animated-container)
+[![Downloads](https://img.shields.io/npm/dm/animated-container)](https://www.npmjs.com/package/animated-container)
+
 # Animated Container
 
 **AnimatedContainer** is a React Native animated component that dynamically adjusts its height based on the content inside a ScrollView. It is powered by `react-native-reanimated` to provide smooth and fluid animations.
