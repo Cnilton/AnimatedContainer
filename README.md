@@ -1,5 +1,6 @@
 [![npm version](https://badge.fury.io/js/react-native-reanimated-container.svg)](https://www.npmjs.com/package/react-native-reanimated-container)
 [![Downloads](https://img.shields.io/npm/dm/react-native-reanimated-container)](https://www.npmjs.com/package/react-native-reanimated-container)
+[![Downloads](https://img.shields.io/npm/dt/react-native-reanimated-container)](https://www.npmjs.com/package/react-native-reanimated-container)
 
 # Animated Container
 
