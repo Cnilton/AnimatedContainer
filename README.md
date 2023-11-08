@@ -7,7 +7,7 @@
 
 ## Installation
 
-Before using AnimatedContainer, make sure you have `react-native-reanimated` installed in your project. If not, you can install it using the following command:
+- Before using AnimatedContainer, make sure you have `react-native-reanimated` installed in your project. If not, you can install it using the following command:
 
 ```bash
 npm install react-native-reanimated
@@ -15,13 +15,27 @@ npm install react-native-reanimated
 yarn add react-native-reanimated
 ```
 
-Next, install the AnimatedContainer package:
+and don't forget to add the following code to babel.config.js
+
+```jsx
+...
+plugins: ['react-native-reanimated/plugin']
+```
+
+If you have any trouble installing reanimated, please follow their guide: https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/.
+
+<br />
+
+- Next, install the AnimatedContainer package:
 
 ```bash
 npm install react-native-reanimated-container
 # or
 yarn add react-native-reanimated-container
 ```
+
+<br />
+
 
 ## Usage
 
