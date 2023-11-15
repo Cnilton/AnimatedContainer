@@ -6,6 +6,10 @@
 
 **AnimatedContainer** is a React Native animated component that dynamically adjusts its height based on the content inside a ScrollView. It is powered by `react-native-reanimated` to provide smooth and fluid animations.
 
+# Example
+
+https://appetize.io/app/as5bsp6sgnrykx36any6ssgwde?device=pixel7&osVersion=13.0
+
 ## Installation
 
 - Before using AnimatedContainer, make sure you have `react-native-reanimated` installed in your project. If not, you can install it using the following command:
