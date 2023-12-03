@@ -1,6 +1,6 @@
 {
   "name": "react-native-reanimated-container",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "author": "Caio Nilton <cnilton>",
   "main": "index.tsx",
@@ -14,7 +14,7 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-reanimated": "*"
+    "react-native-reanimated": ">=3.3.0 <4.0.0 || >=3.6.1 <4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

@@ -15,6 +15,12 @@ npm install react-native-reanimated
 yarn add react-native-reanimated
 ```
 
+⚠️ on iOS, add the following to your podfile:
+
+```
+pod 'react-native-animated-container', :path => '../node_modules/react-native-animated-container'
+```
+
 Next, install the AnimatedContainer package:
 
 ```bash
