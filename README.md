@@ -7,6 +7,45 @@
 **AnimatedContainer** is a React Native animated component that dynamically adjusts its height based on the content inside a ScrollView. It is powered by `react-native-reanimated` to provide smooth and fluid animations.
 
 # Example
+
+```tsx
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ */
+
+import React, {useEffect} from 'react';
+import {Button, SafeAreaView, Text} from 'react-native';
+
+import {AnimatedContainer} from 'react-native-reanimated-container';
+
+function App(): JSX.Element {
+  const [arr, setArr] = React.useState([]);
+
+  useEffect(() => {
+    setInterval(() => {
+      setArr(arr => [...arr, arr.length + 1]);
+    }, 1500);
+  }, []);
+
+  return (
+    <SafeAreaView>
+      <Button title="Reset" onPress={() => setArr([])} />
+      <AnimatedContainer>
+        {arr.map((_, index) => (
+          <Text>Container {index}</Text>
+        ))}
+      </AnimatedContainer>
+    </SafeAreaView>
+  );
+}
+
+export default App;
+
+```
+
 <p align="center">
 <img src="https://github.com/Cnilton/AnimatedContainer/assets/40298250/f18590fd-4fa0-4a29-91f0-cf16bfad22cc" width="250" />
 </p>
